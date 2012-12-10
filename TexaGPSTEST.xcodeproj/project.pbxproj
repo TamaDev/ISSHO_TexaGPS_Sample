@@ -1,0 +1,355 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B23F66F11641203F00417DAE /* Landmark2.png in Resources */ = {isa = PBXBuildFile; fileRef = B23F66EE1641203F00417DAE /* Landmark2.png */; };
+		B23F66F21641203F00417DAE /* Landmark2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B23F66EF1641203F00417DAE /* Landmark2@2x.png */; };
+		B23F66F31641203F00417DAE /* rader-01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B23F66F01641203F00417DAE /* rader-01@2x.png */; };
+		B248CCAB16440476008ABD3A /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B248CCAA16440476008ABD3A /* Icon@2x.png */; };
+		B25C891916421FE4005EE1E4 /* compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B25C891816421FE4005EE1E4 /* compass@2x.png */; };
+		B27A089C1649245F002C5735 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27A089B1649245F002C5735 /* SystemConfiguration.framework */; };
+		B27A08A516493115002C5735 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27A08A416493115002C5735 /* CFNetwork.framework */; };
+		B287609316758A6600F512E6 /* TexaGPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B287609216758A6600F512E6 /* TexaGPS.framework */; };
+		B2E6C9BF1640D15800373139 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E6C9BE1640D15800373139 /* UIKit.framework */; };
+		B2E6C9C11640D15800373139 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E6C9C01640D15800373139 /* Foundation.framework */; };
+		B2E6C9C31640D15800373139 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E6C9C21640D15800373139 /* CoreGraphics.framework */; };
+		B2E6C9C91640D15800373139 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2E6C9C71640D15800373139 /* InfoPlist.strings */; };
+		B2E6C9CB1640D15800373139 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E6C9CA1640D15800373139 /* main.m */; };
+		B2E6C9CF1640D15800373139 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E6C9CE1640D15800373139 /* AppDelegate.m */; };
+		B2E6C9D11640D15800373139 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B2E6C9D01640D15800373139 /* Default.png */; };
+		B2E6C9D31640D15800373139 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2E6C9D21640D15800373139 /* Default@2x.png */; };
+		B2E6C9D51640D15800373139 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2E6C9D41640D15800373139 /* Default-568h@2x.png */; };
+		B2E6C9D81640D15800373139 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2E6C9D71640D15800373139 /* ViewController.m */; };
+		B2E6C9DB1640D15800373139 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E6C9D91640D15800373139 /* ViewController.xib */; };
+		B2E6C9E41640D3C100373139 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E6C9E31640D3C100373139 /* CoreLocation.framework */; };
+		B2E6C9E61640D3CB00373139 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E6C9E51640D3CB00373139 /* MapKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B23F66EE1641203F00417DAE /* Landmark2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Landmark2.png; sourceTree = "<group>"; };
+		B23F66EF1641203F00417DAE /* Landmark2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Landmark2@2x.png"; sourceTree = "<group>"; };
+		B23F66F01641203F00417DAE /* rader-01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rader-01@2x.png"; sourceTree = "<group>"; };
+		B248CCAA16440476008ABD3A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		B25C891816421FE4005EE1E4 /* compass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compass@2x.png"; sourceTree = "<group>"; };
+		B27A089B1649245F002C5735 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B27A08A416493115002C5735 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B287609216758A6600F512E6 /* TexaGPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TexaGPS.framework; path = "TexaGPSLib/Debug-Framework/TexaGPS.framework"; sourceTree = "<group>"; };
+		B2E6C9BA1640D15800373139 /* TexaGPSTEST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TexaGPSTEST.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2E6C9BE1640D15800373139 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B2E6C9C01640D15800373139 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B2E6C9C21640D15800373139 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B2E6C9C61640D15800373139 /* TexaGPSTEST-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TexaGPSTEST-Info.plist"; sourceTree = "<group>"; };
+		B2E6C9C81640D15800373139 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B2E6C9CA1640D15800373139 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B2E6C9CC1640D15800373139 /* TexaGPSTEST-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TexaGPSTEST-Prefix.pch"; sourceTree = "<group>"; };
+		B2E6C9CD1640D15800373139 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B2E6C9CE1640D15800373139 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B2E6C9D01640D15800373139 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B2E6C9D21640D15800373139 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B2E6C9D41640D15800373139 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B2E6C9D61640D15800373139 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B2E6C9D71640D15800373139 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B2E6C9DA1640D15800373139 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		B2E6C9E31640D3C100373139 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B2E6C9E51640D3CB00373139 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2E6C9B71640D15800373139 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B287609316758A6600F512E6 /* TexaGPS.framework in Frameworks */,
+				B27A08A516493115002C5735 /* CFNetwork.framework in Frameworks */,
+				B27A089C1649245F002C5735 /* SystemConfiguration.framework in Frameworks */,
+				B2E6C9E61640D3CB00373139 /* MapKit.framework in Frameworks */,
+				B2E6C9E41640D3C100373139 /* CoreLocation.framework in Frameworks */,
+				B2E6C9BF1640D15800373139 /* UIKit.framework in Frameworks */,
+				B2E6C9C11640D15800373139 /* Foundation.framework in Frameworks */,
+				B2E6C9C31640D15800373139 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B2E6C9AF1640D15800373139 = {
+			isa = PBXGroup;
+			children = (
+				B2E6C9C41640D15800373139 /* TexaGPSTEST */,
+				B2E6C9BD1640D15800373139 /* Frameworks */,
+				B2E6C9BB1640D15800373139 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B2E6C9BB1640D15800373139 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2E6C9BA1640D15800373139 /* TexaGPSTEST.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2E6C9BD1640D15800373139 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B287609216758A6600F512E6 /* TexaGPS.framework */,
+				B27A08A416493115002C5735 /* CFNetwork.framework */,
+				B27A089B1649245F002C5735 /* SystemConfiguration.framework */,
+				B2E6C9E51640D3CB00373139 /* MapKit.framework */,
+				B2E6C9E31640D3C100373139 /* CoreLocation.framework */,
+				B2E6C9BE1640D15800373139 /* UIKit.framework */,
+				B2E6C9C01640D15800373139 /* Foundation.framework */,
+				B2E6C9C21640D15800373139 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2E6C9C41640D15800373139 /* TexaGPSTEST */ = {
+			isa = PBXGroup;
+			children = (
+				B2E6C9CD1640D15800373139 /* AppDelegate.h */,
+				B2E6C9CE1640D15800373139 /* AppDelegate.m */,
+				B2E6C9D61640D15800373139 /* ViewController.h */,
+				B2E6C9D71640D15800373139 /* ViewController.m */,
+				B2E6C9D91640D15800373139 /* ViewController.xib */,
+				B2E6C9C51640D15800373139 /* Supporting Files */,
+			);
+			path = TexaGPSTEST;
+			sourceTree = "<group>";
+		};
+		B2E6C9C51640D15800373139 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B25C891816421FE4005EE1E4 /* compass@2x.png */,
+				B248CCAA16440476008ABD3A /* Icon@2x.png */,
+				B23F66EE1641203F00417DAE /* Landmark2.png */,
+				B23F66EF1641203F00417DAE /* Landmark2@2x.png */,
+				B23F66F01641203F00417DAE /* rader-01@2x.png */,
+				B2E6C9C61640D15800373139 /* TexaGPSTEST-Info.plist */,
+				B2E6C9C71640D15800373139 /* InfoPlist.strings */,
+				B2E6C9CA1640D15800373139 /* main.m */,
+				B2E6C9CC1640D15800373139 /* TexaGPSTEST-Prefix.pch */,
+				B2E6C9D01640D15800373139 /* Default.png */,
+				B2E6C9D21640D15800373139 /* Default@2x.png */,
+				B2E6C9D41640D15800373139 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2E6C9B91640D15800373139 /* TexaGPSTEST */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2E6C9DE1640D15800373139 /* Build configuration list for PBXNativeTarget "TexaGPSTEST" */;
+			buildPhases = (
+				B2E6C9B61640D15800373139 /* Sources */,
+				B2E6C9B71640D15800373139 /* Frameworks */,
+				B2E6C9B81640D15800373139 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TexaGPSTEST;
+			productName = TexaGPSTEST;
+			productReference = B2E6C9BA1640D15800373139 /* TexaGPSTEST.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2E6C9B11640D15800373139 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = ISSHO;
+			};
+			buildConfigurationList = B2E6C9B41640D15800373139 /* Build configuration list for PBXProject "TexaGPSTEST" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B2E6C9AF1640D15800373139;
+			productRefGroup = B2E6C9BB1640D15800373139 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2E6C9B91640D15800373139 /* TexaGPSTEST */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B2E6C9B81640D15800373139 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E6C9C91640D15800373139 /* InfoPlist.strings in Resources */,
+				B2E6C9D11640D15800373139 /* Default.png in Resources */,
+				B2E6C9D31640D15800373139 /* Default@2x.png in Resources */,
+				B2E6C9D51640D15800373139 /* Default-568h@2x.png in Resources */,
+				B2E6C9DB1640D15800373139 /* ViewController.xib in Resources */,
+				B23F66F11641203F00417DAE /* Landmark2.png in Resources */,
+				B23F66F21641203F00417DAE /* Landmark2@2x.png in Resources */,
+				B23F66F31641203F00417DAE /* rader-01@2x.png in Resources */,
+				B25C891916421FE4005EE1E4 /* compass@2x.png in Resources */,
+				B248CCAB16440476008ABD3A /* Icon@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2E6C9B61640D15800373139 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2E6C9CB1640D15800373139 /* main.m in Sources */,
+				B2E6C9CF1640D15800373139 /* AppDelegate.m in Sources */,
+				B2E6C9D81640D15800373139 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B2E6C9C71640D15800373139 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2E6C9C81640D15800373139 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B2E6C9D91640D15800373139 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2E6C9DA1640D15800373139 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B2E6C9DC1640D15800373139 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B2E6C9DD1640D15800373139 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B2E6C9DF1640D15800373139 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/TexaGPSTEST\"",
+					"\"$(SRCROOT)/TexaGPSLib/Debug-framework\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TexaGPSTEST/TexaGPSTEST-Prefix.pch";
+				INFOPLIST_FILE = "TexaGPSTEST/TexaGPSTEST-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B2E6C9E01640D15800373139 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/TexaGPSTEST\"",
+					"\"$(SRCROOT)/TexaGPSLib/Release-framework\"",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TexaGPSTEST/TexaGPSTEST-Prefix.pch";
+				INFOPLIST_FILE = "TexaGPSTEST/TexaGPSTEST-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2E6C9B41640D15800373139 /* Build configuration list for PBXProject "TexaGPSTEST" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2E6C9DC1640D15800373139 /* Debug */,
+				B2E6C9DD1640D15800373139 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2E6C9DE1640D15800373139 /* Build configuration list for PBXNativeTarget "TexaGPSTEST" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2E6C9DF1640D15800373139 /* Debug */,
+				B2E6C9E01640D15800373139 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2E6C9B11640D15800373139 /* Project object */;
+}
