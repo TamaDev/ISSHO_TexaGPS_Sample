@@ -12,7 +12,6 @@
 #import "MKUserLocation+TexaGPS.h"
 
 
-
 // GPS data recieve protocol.
 @protocol TexaGPSClientDelegate <NSObject>
 @optional
@@ -23,16 +22,27 @@
 - (void)didRecieveCommandTexaGPS:(NSString*)commandName;
 - (void)didFinishingLookupSuccess:(NSString*)connectedHost;
 - (void)didFinishingLookupFail;
+- (void)foundTexaGPS:(NSDictionary*)serverInfo;
 @end
 
 
 @interface TexaGPSClient : NSObject
-<NSURLConnectionDelegate>
+<
+NSURLConnectionDelegate,
+NSNetServiceBrowserDelegate,NSNetServiceDelegate
+>
 {
     __block NSDate *airGPSlastRecieveDate_;
     BOOL isLookup_;
+    BOOL noBonjourDevices;
+    NSMutableData* receivedData;    // concat NSURLConnection received data.
+    NSMutableDictionary* bonjourServerDic;  // Bonjour service dictionary.
+    NSMutableDictionary* browseDic; // NSNetService host<->IP resolve dictionary.
+    NSString* lastTexaHost;         // Connection succellfully IP address.
+    NSNetServiceBrowser *texaServiceBrowser;
 }
 
+@property (nonatomic, weak) id<TexaGPSClientDelegate> delegate;
 @property (nonatomic, strong) NSDate *airGPSlastRecieveDate;    // Recieve raw data
 @property (nonatomic, strong) CLLocation *airGPSLocation;       // Remote location value.
 @property (nonatomic, strong) CLHeading *airGPSHeading;         // Remote compass value.
@@ -40,9 +50,8 @@
 @property (nonatomic, assign) CGFloat interval;                 // Reload interval.(defaul 1.0sec)
 @property (nonatomic, assign) CGFloat lookupInterval;           // Lookup interval.(default 0.25sec)
 
-@property (nonatomic, weak) id<TexaGPSClientDelegate> delegate;
-
 - (void)lookupTexaGPSService;    // Lookup TexaGPS host.
 - (void)stopTexaGPSService;      // Safe terminate.
+- (void)chooseTexaGPSHost:(NSString*)hostName;    // Choose several TexaGPS host.
 @end
 

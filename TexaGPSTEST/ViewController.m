@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#define kTexaChoiceActionTag    1001    // Choose TexaGPS host UIActionSheet tag.
+
 @interface ViewController ()
 
 @end
@@ -17,6 +19,7 @@
 @synthesize mapTestView = mapTestView_;
 @synthesize compassImageView = compassImageView_;
 @synthesize killButton = killButton_;
+
 
 - (BOOL)shouldAutorotate
 {
@@ -35,10 +38,11 @@
         locationManager = [[CLLocationManager alloc] init];
     }
     
-    // ==== Initialize TexaGPS only 3 line code!! ====
+    // ==== Initialize TexaGPS only 4 line code!! ====
     texaGPS = [[TexaGPSClient alloc] init];
     texaGPS.delegate = self;
-    texaGPS.interval = 1.0f;    // Auto recieve interval.
+    texaGPS.interval = 1.5f;    // Auto recieve interval.
+    [texaGPS lookupTexaGPSService]; // Auto connect TexaGPS
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,22 +55,38 @@
 {
     CLLocation* newLocation = [locations lastObject];
     
-    // Update fake UserLocation.
     dispatch_async(dispatch_get_main_queue(), ^{
+        
+        if( proxyUserLocation != nil ){
+            [mapTestView_ removeAnnotation:proxyUserLocation];
+            proxyUserLocation = nil;
+        }
+
         if( CLLocationCoordinate2DIsValid(newLocation.coordinate) == YES ){
+            // Added user location annotation.
+            if( proxyUserLocation != nil ){
+                [mapTestView_ removeAnnotation:proxyUserLocation];
+                proxyUserLocation = nil;
+            }
+            proxyUserLocation = [[MKUserLocation alloc] init];
+            proxyUserLocation.coordinate = newLocation.coordinate;
+            texaGPS.airGPSLocation = newLocation;
+            [mapTestView_ addAnnotation:proxyUserLocation];
+            
             [UIView animateWithDuration:1.0f animations:^{
                 proxyUserLocation.coordinate = newLocation.coordinate;
-                // Added Ripple annotation.
-                if( rippleUserLocation == nil ){
-                    rippleUserLocation = [[MKUserLocation alloc] init];
-                    rippleUserLocation.coordinate = newLocation.coordinate;
-                    rippleUserLocation.title = @"Ripple";
-                    if( CLLocationCoordinate2DIsValid(rippleUserLocation.coordinate) == YES ){
-                        [mapTestView_ addAnnotation:rippleUserLocation];
-                    }
-                }
-                
+                [mapTestView_ addAnnotation:proxyUserLocation];
             }];
+            
+            // Added Ripple annotation.
+            if( rippleUserLocation == nil ){
+                rippleUserLocation = [[MKUserLocation alloc] init];
+                rippleUserLocation.coordinate = newLocation.coordinate;
+                rippleUserLocation.title = @"Ripple";
+                if( CLLocationCoordinate2DIsValid(rippleUserLocation.coordinate) == YES ){
+                    [mapTestView_ addAnnotation:rippleUserLocation];
+                }
+            }
         }
     });
 }
@@ -75,6 +95,7 @@
 {
     static double oldMapHeading = 0;
     double mapHeading = 0;
+     
     if (newHeading.trueHeading >= 0) {
         mapHeading = newHeading.trueHeading;
     }else if (newHeading.magneticHeading >=0){
@@ -128,12 +149,12 @@
         }
         // GPS accuracy threshould value sample.
 /*
-        accuracyLevel = 10.0f; // Excellent!!
+        accuracyLevel = 10.0f; // Excellent!
         accuracyLevel = 50.0f; // Great!
-        accuracyLevel = 150.0f; // Ordinally.
-        accuracyLevel = 300.0f; // Poor.
-        accuracyLevel = 450.0f; // Dust.
-        accuracyLevel = 600.0f; // OMG!!
+        accuracyLevel = 150.0f; // Ordinally
+        accuracyLevel = 300.0f; // Poor
+        accuracyLevel = 450.0f; // Dust
+        accuracyLevel = 600.0f; // Ashes!
 */
         CGFloat hueValue = 0.55f - ((accuracyLevel/airGPSAccuracySteps/10) * 0.5f);
         TexaLOG(@"HUE:[%f]",hueValue);
@@ -157,7 +178,7 @@
         proxyLocationView.canShowCallout = NO;
         
         MKUserLocation* proxyAnnotation = annotation;
-        CGFloat effectLevel = 256.0f; // Ripple animation effet circle range upper limit.
+        CGFloat effectLevel = 256.0f; // effet range limit. 
         if( accuracyLevel > 0 ){
             if( accuracyLevel < airGPSAccuracySteps ){
                 effectLevel = effectLevel / 2.0f;
@@ -197,17 +218,33 @@
 }
 
 #pragma mark === TexaGPS Delegate(Optional) ===
-// TexaGPS lookup success.
-- (void)didFinishingLookupSuccess:(NSString*)connectedHost
-{
-    TexaLOG(@"%@[%@]",NSStringFromSelector(_cmd),connectedHost);
-}
 
-// TexaGPS lookup fail.
-- (void)didFinishingLookupFail
+- (void)foundTexaGPS:(NSDictionary*)serverInfo
 {
-    TexaLOG(@"%@",NSStringFromSelector(_cmd));
-    [self pushTexaGPS:killButton_];
+    bonjourServerDic = serverInfo;
+    
+    if( texaChoiceSheet != nil ){
+        return;
+    }
+    
+    NSArray* serverNameArray = [serverInfo allKeys];
+    texaChoiceSheet = [[UIActionSheet alloc]
+                       initWithTitle:NSLocalizedString(@"Choose TexaGPS Devices.",nil)
+                       delegate:self
+                       cancelButtonTitle:nil
+                       destructiveButtonTitle:nil
+                       otherButtonTitles:nil];
+    
+    for (NSString* buttonTitle in serverNameArray) {
+        [texaChoiceSheet addButtonWithTitle:buttonTitle];
+    }
+    texaChoiceSheet.cancelButtonIndex = [texaChoiceSheet addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
+    texaChoiceSheet.tag = kTexaChoiceActionTag;
+    [texaChoiceSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [texaChoiceSheet showInView:self.view];
+    });
 }
 
 // Receive success and raw data access.
@@ -221,18 +258,33 @@
 - (void)didFailTexaGPS
 {
     TexaLOG(@"%@",NSStringFromSelector(_cmd));
+    [self enableLocalCoreLocation];
 }
 
 // TexaGPS start.
 - (void)willStartTexaGPS
 {
     TexaLOG(@"%@",NSStringFromSelector(_cmd));
+    
+     // This code is poor! You should move a curerent location code you can recieved it.
+     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 3.0f * NSEC_PER_SEC);
+     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+         [self pushCurrentLocation:nil];
+     });
+}
+
+// Unreachable TexaGPS.
+- (void)didFinishingLookupFail
+{
+    TexaLOG(@"%@",NSStringFromSelector(_cmd));
+    [self enableLocalCoreLocation];
 }
 
 // TexaGPS stop.
 - (void)didStopTexaGPS
 {
     TexaLOG(@"%@",NSStringFromSelector(_cmd));
+    [self enableLocalCoreLocation];
 }
 
 // Remote command receive delegate.
@@ -268,8 +320,8 @@
     double latDelta = mapTestView_.region.span.latitudeDelta;
     double lonDelta = mapTestView_.region.span.longitudeDelta;
     
-    latDelta = latDelta / 2.0f;
-    lonDelta = lonDelta / 2.0f;
+    latDelta = latDelta / 3.0f;
+    lonDelta = lonDelta / 3.0f;
     MKCoordinateSpan span = MKCoordinateSpanMake(latDelta, lonDelta);
     MKCoordinateRegion coordinateRegion = MKCoordinateRegionMake(mapTestView_.centerCoordinate, span);
     [mapTestView_ setRegion:coordinateRegion animated:YES];
@@ -280,58 +332,52 @@
     double latDelta = mapTestView_.region.span.latitudeDelta;
     double lonDelta = mapTestView_.region.span.longitudeDelta;
 
-    latDelta = latDelta * 2.0f;
-    lonDelta = lonDelta * 2.0f;
+    latDelta = latDelta * 1.5f;
+    lonDelta = lonDelta * 1.5f;
     
     MKCoordinateSpan span = MKCoordinateSpanMake(latDelta, lonDelta);
     MKCoordinateRegion coordinateRegion = MKCoordinateRegionMake(mapTestView_.centerCoordinate, span);
     [mapTestView_ setRegion:coordinateRegion animated:YES];
 }
 
-// Start or stop TexaGPS
+// Stop or start TexaGPS
 - (IBAction)pushTexaGPS:(id)sender
 {
-    static BOOL isRunning = NO;
-    // Terminate TexaGPS data recieve.
-    if( isRunning == YES ){
-        [killButton_ setTitle:@"START" forState:UIControlStateNormal];
-        texaGPS.delegate = nil;
-        locationManager.delegate = self;
-        [texaGPS stopTexaGPSService];
-        [mapTestView_ removeAnnotation:proxyUserLocation];
-        proxyUserLocation = nil;
-        mapTestView_.showsUserLocation = YES;
-        mapTestView_.userTrackingMode = MKUserTrackingModeFollow;
+    if( texaGPS.enableAirGPS == YES ){
+        [self enableLocalCoreLocation];
         
-    // Start TexaGPS data recieve.
     }else{
-        [killButton_ setTitle:@"STOP" forState:UIControlStateNormal];
-        texaGPS.delegate = self;
-        locationManager.delegate = nil;
-        mapTestView_.showsUserLocation = NO;
-        mapTestView_.userTrackingMode = MKUserTrackingModeNone;
-        // Added user location annotation.
-        if( proxyUserLocation == nil ){
-            proxyUserLocation = [[MKUserLocation alloc] init];
-            [mapTestView_ addAnnotation:proxyUserLocation];
-        }
-        MKCoordinateSpan span = MKCoordinateSpanMake(0.5f, 0.5f);
-        MKCoordinateRegion coordinateRegion = MKCoordinateRegionMake(mapTestView_.centerCoordinate, span);
-        [mapTestView_ setRegion:coordinateRegion animated:YES];
-        [texaGPS lookupTexaGPSService];
+        [self enableTexaGPSLocation];
         
-        // This code is poor! You should move a curerent location code you can recieved it.
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, 2.0f * NSEC_PER_SEC);
-        dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            [self pushCurrentLocation:nil];
-        });
     }
-    
-    isRunning = !isRunning;
 }
 
 #pragma mark === Utility ===
-// HUE convert from gray scale image
+// Kill local CoreLocation and start TexaGPS.
+- (void)enableTexaGPSLocation
+{
+    [killButton_ setTitle:@"STOP" forState:UIControlStateNormal];
+    texaGPS.delegate = self;
+    locationManager.delegate = nil;
+    mapTestView_.showsUserLocation = NO;
+    mapTestView_.userTrackingMode = MKUserTrackingModeNone;
+    [texaGPS lookupTexaGPSService];
+
+}
+
+// Kill TexaGPS annotation and start CoreLocation.
+- (void)enableLocalCoreLocation
+{
+    [killButton_ setTitle:@"START" forState:UIControlStateNormal];
+    texaGPS.delegate = nil;
+    locationManager.delegate = self;
+    [texaGPS stopTexaGPSService];
+    [mapTestView_ removeAnnotation:proxyUserLocation];
+    mapTestView_.showsUserLocation = YES;
+    mapTestView_.userTrackingMode = MKUserTrackingModeFollow;
+}
+
+// HUE convert gray scale image
 - (UIImage*)imageNamed:(NSString *)name withColor:(UIColor *)color
 {
     UIImage *img = [UIImage imageNamed:name];
@@ -355,5 +401,19 @@
     return(coloredImg);
 }
 
-
+#pragma mark UIActionSheet delegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if( actionSheet.tag == kTexaChoiceActionTag ){
+        if( actionSheet.cancelButtonIndex == buttonIndex ){
+            [self enableLocalCoreLocation];
+        
+        }else{
+            NSString* lookupHOST = [actionSheet buttonTitleAtIndex:buttonIndex];
+            [texaGPS chooseTexaGPSHost:lookupHOST];
+        }
+        
+        texaChoiceSheet = nil;
+    }
+}
 @end

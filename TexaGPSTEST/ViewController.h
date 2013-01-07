@@ -7,16 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "TexaGPSClient.h"
 #import <TexaGPS/TexaGPSClient.h>
 
 @interface ViewController : UIViewController
-<MKMapViewDelegate,TexaGPSClientDelegate,CLLocationManagerDelegate>
+<MKMapViewDelegate,TexaGPSClientDelegate,CLLocationManagerDelegate,UIActionSheetDelegate>
 {
     CLLocationManager* locationManager;
     TexaGPSClient* texaGPS;
     MKUserLocation* proxyUserLocation;
     MKUserLocation* rippleUserLocation;
     MKAnnotationView* lastLocationView;
+    NSDictionary*   bonjourServerDic;
+    UIActionSheet* texaChoiceSheet;
 }
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapTestView;
