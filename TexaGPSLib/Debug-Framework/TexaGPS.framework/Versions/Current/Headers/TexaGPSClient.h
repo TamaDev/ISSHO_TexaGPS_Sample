@@ -11,7 +11,6 @@
 #import <MapKit/MapKit.h>
 #import "MKUserLocation+TexaGPS.h"
 
-
 // GPS data recieve protocol.
 @protocol TexaGPSClientDelegate <NSObject>
 @optional
@@ -53,5 +52,7 @@ NSNetServiceBrowserDelegate,NSNetServiceDelegate
 - (void)lookupTexaGPSService;    // Lookup TexaGPS host.
 - (void)stopTexaGPSService;      // Safe terminate.
 - (void)chooseTexaGPSHost:(NSString*)hostName;    // Choose several TexaGPS host.
+- (void)uploadPreset:(NSString*)zipPath;    // upload preset manifest-zip file.
+
 @end
 

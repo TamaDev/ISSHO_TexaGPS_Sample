@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "TexaGPSClient.h"
 #import <TexaGPS/TexaGPSClient.h>
 
 @interface ViewController : UIViewController

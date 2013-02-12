@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B214437216C9F3FA00ADF008 /* TexaGPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B214437116C9F3FA00ADF008 /* TexaGPS.framework */; };
 		B23F66F11641203F00417DAE /* Landmark2.png in Resources */ = {isa = PBXBuildFile; fileRef = B23F66EE1641203F00417DAE /* Landmark2.png */; };
 		B23F66F21641203F00417DAE /* Landmark2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B23F66EF1641203F00417DAE /* Landmark2@2x.png */; };
 		B23F66F31641203F00417DAE /* rader-01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B23F66F01641203F00417DAE /* rader-01@2x.png */; };
@@ -14,7 +15,9 @@
 		B25C891916421FE4005EE1E4 /* compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B25C891816421FE4005EE1E4 /* compass@2x.png */; };
 		B27A089C1649245F002C5735 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27A089B1649245F002C5735 /* SystemConfiguration.framework */; };
 		B27A08A516493115002C5735 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B27A08A416493115002C5735 /* CFNetwork.framework */; };
-		B287609316758A6600F512E6 /* TexaGPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B287609216758A6600F512E6 /* TexaGPS.framework */; };
+		B2AD524A16AFE24B00073686 /* Preset2x3.zip in Resources */ = {isa = PBXBuildFile; fileRef = B2AD524816AFE24B00073686 /* Preset2x3.zip */; };
+		B2AD524B16AFE24B00073686 /* Preset3x3.zip in Resources */ = {isa = PBXBuildFile; fileRef = B2AD524916AFE24B00073686 /* Preset3x3.zip */; };
+		B2E0C77B169A70A600CF0E4F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2E0C77D169A70A600CF0E4F /* Localizable.strings */; };
 		B2E6C9BF1640D15800373139 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E6C9BE1640D15800373139 /* UIKit.framework */; };
 		B2E6C9C11640D15800373139 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E6C9C01640D15800373139 /* Foundation.framework */; };
 		B2E6C9C31640D15800373139 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E6C9C21640D15800373139 /* CoreGraphics.framework */; };
@@ -31,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B214437116C9F3FA00ADF008 /* TexaGPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TexaGPS.framework; path = "TexaGPSLib/Debug-Framework/TexaGPS.framework"; sourceTree = "<group>"; };
 		B23F66EE1641203F00417DAE /* Landmark2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Landmark2.png; sourceTree = "<group>"; };
 		B23F66EF1641203F00417DAE /* Landmark2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Landmark2@2x.png"; sourceTree = "<group>"; };
 		B23F66F01641203F00417DAE /* rader-01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rader-01@2x.png"; sourceTree = "<group>"; };
@@ -38,7 +42,12 @@
 		B25C891816421FE4005EE1E4 /* compass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "compass@2x.png"; sourceTree = "<group>"; };
 		B27A089B1649245F002C5735 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B27A08A416493115002C5735 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		B287609216758A6600F512E6 /* TexaGPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TexaGPS.framework; path = "TexaGPSLib/Debug-Framework/TexaGPS.framework"; sourceTree = "<group>"; };
+		B2AD524816AFE24B00073686 /* Preset2x3.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Preset2x3.zip; sourceTree = "<group>"; };
+		B2AD524916AFE24B00073686 /* Preset3x3.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Preset3x3.zip; sourceTree = "<group>"; };
+		B2E0C77C169A70A600CF0E4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B2E0C77E169A70EF00CF0E4F /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/ViewController.xib; sourceTree = "<group>"; };
+		B2E0C77F169A70EF00CF0E4F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B2E0C780169A70EF00CF0E4F /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B2E6C9BA1640D15800373139 /* TexaGPSTEST.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TexaGPSTEST.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2E6C9BE1640D15800373139 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B2E6C9C01640D15800373139 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -64,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B287609316758A6600F512E6 /* TexaGPS.framework in Frameworks */,
+				B214437216C9F3FA00ADF008 /* TexaGPS.framework in Frameworks */,
 				B27A08A516493115002C5735 /* CFNetwork.framework in Frameworks */,
 				B27A089C1649245F002C5735 /* SystemConfiguration.framework in Frameworks */,
 				B2E6C9E61640D3CB00373139 /* MapKit.framework in Frameworks */,
@@ -98,7 +107,7 @@
 		B2E6C9BD1640D15800373139 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B287609216758A6600F512E6 /* TexaGPS.framework */,
+				B214437116C9F3FA00ADF008 /* TexaGPS.framework */,
 				B27A08A416493115002C5735 /* CFNetwork.framework */,
 				B27A089B1649245F002C5735 /* SystemConfiguration.framework */,
 				B2E6C9E51640D3CB00373139 /* MapKit.framework */,
@@ -126,6 +135,8 @@
 		B2E6C9C51640D15800373139 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B2AD524816AFE24B00073686 /* Preset2x3.zip */,
+				B2AD524916AFE24B00073686 /* Preset3x3.zip */,
 				B25C891816421FE4005EE1E4 /* compass@2x.png */,
 				B248CCAA16440476008ABD3A /* Icon@2x.png */,
 				B23F66EE1641203F00417DAE /* Landmark2.png */,
@@ -138,6 +149,7 @@
 				B2E6C9D01640D15800373139 /* Default.png */,
 				B2E6C9D21640D15800373139 /* Default@2x.png */,
 				B2E6C9D41640D15800373139 /* Default-568h@2x.png */,
+				B2E0C77D169A70A600CF0E4F /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -177,6 +189,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ja,
 			);
 			mainGroup = B2E6C9AF1640D15800373139;
 			productRefGroup = B2E6C9BB1640D15800373139 /* Products */;
@@ -203,6 +216,9 @@
 				B23F66F31641203F00417DAE /* rader-01@2x.png in Resources */,
 				B25C891916421FE4005EE1E4 /* compass@2x.png in Resources */,
 				B248CCAB16440476008ABD3A /* Icon@2x.png in Resources */,
+				B2E0C77B169A70A600CF0E4F /* Localizable.strings in Resources */,
+				B2AD524A16AFE24B00073686 /* Preset2x3.zip in Resources */,
+				B2AD524B16AFE24B00073686 /* Preset3x3.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,10 +238,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		B2E0C77D169A70A600CF0E4F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2E0C77C169A70A600CF0E4F /* en */,
+				B2E0C780169A70EF00CF0E4F /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		B2E6C9C71640D15800373139 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B2E6C9C81640D15800373139 /* en */,
+				B2E0C77F169A70EF00CF0E4F /* ja */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -234,6 +260,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B2E6C9DA1640D15800373139 /* en */,
+				B2E0C77E169A70EF00CF0E4F /* ja */,
 			);
 			name = ViewController.xib;
 			sourceTree = "<group>";
@@ -250,7 +277,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -263,7 +290,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -277,13 +304,13 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -293,17 +320,20 @@
 		B2E6C9DF1640D15800373139 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TexaGPSTEST\"",
-					"\"$(SRCROOT)/TexaGPSLib/Debug-framework\"",
+					"\"$(SRCROOT)/TexaGPSLib/Release-framework\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/TexaGPSLib/Debug-Framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TexaGPSTEST/TexaGPSTEST-Prefix.pch";
 				INFOPLIST_FILE = "TexaGPSTEST/TexaGPSTEST-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -312,17 +342,20 @@
 		B2E6C9E01640D15800373139 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/TexaGPSTEST\"",
 					"\"$(SRCROOT)/TexaGPSLib/Release-framework\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/TexaGPSLib/Debug-Framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TexaGPSTEST/TexaGPSTEST-Prefix.pch";
 				INFOPLIST_FILE = "TexaGPSTEST/TexaGPSTEST-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

@@ -157,7 +157,7 @@
         accuracyLevel = 600.0f; // Ashes!
 */
         CGFloat hueValue = 0.55f - ((accuracyLevel/airGPSAccuracySteps/10) * 0.5f);
-        TexaLOG(@"HUE:[%f]",hueValue);
+        //TexaLOG(@"HUE:[%f]",hueValue);
         
 #ifdef COLOR_LOOP_DEBUG // HUE loop test code.
          static int levelStep = 0;
@@ -251,7 +251,7 @@
 // ==== Please when you use a more sensitive edge code!! ====
 - (void)didLoadTexaGPS:(NSDictionary*)rawData
 {
-    TexaLOG(@"%@[%@]",NSStringFromSelector(_cmd),rawData);
+    //TexaLOG(@"%@[%@]",NSStringFromSelector(_cmd),rawData);
 }
 
 // Receive failure.
@@ -302,10 +302,30 @@
         
     }else if( [commandName compare:@"ISSHO.RouteHD.Reroute"] == NSOrderedSame ){
         TexaLOG(@"Sorry! This sample code is not implemented yet.");
+    }else{
+        TexaLOG(@"Other custom command:[%@]",commandName);
     }
 }
 
 #pragma mark === IBAction ===
+- (IBAction)pushUpload2x3:(id)sender
+{
+    NSBundle* mainBundle = [NSBundle mainBundle];
+    NSString* uploadZipPath = [mainBundle pathForResource:@"Preset2x3" ofType:@"zip"];
+    TexaLOG(@"%@",uploadZipPath);
+    
+    [texaGPS uploadPreset:uploadZipPath];
+}
+
+- (IBAction)pushUpload3x3:(id)sender
+{
+    NSBundle* mainBundle = [NSBundle mainBundle];
+    NSString* uploadZipPath = [mainBundle pathForResource:@"Preset3x3" ofType:@"zip"];
+    TexaLOG(@"%@",uploadZipPath);
+    
+    [texaGPS uploadPreset:uploadZipPath];
+}
+
 - (IBAction)pushCurrentLocation:(id)sender
 {
     if( texaGPS.enableAirGPS == YES ){
