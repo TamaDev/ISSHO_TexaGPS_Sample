@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B214437216C9F3FA00ADF008 /* TexaGPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B214437116C9F3FA00ADF008 /* TexaGPS.framework */; };
+		B213F7491806433800902F00 /* TexaGPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B213F7481806433800902F00 /* TexaGPS.framework */; };
+		B23415B617A67D5C006A7037 /* Preset2x2.zip in Resources */ = {isa = PBXBuildFile; fileRef = B23415B517A67D5C006A7037 /* Preset2x2.zip */; };
 		B23F66F11641203F00417DAE /* Landmark2.png in Resources */ = {isa = PBXBuildFile; fileRef = B23F66EE1641203F00417DAE /* Landmark2.png */; };
 		B23F66F21641203F00417DAE /* Landmark2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B23F66EF1641203F00417DAE /* Landmark2@2x.png */; };
 		B23F66F31641203F00417DAE /* rader-01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B23F66F01641203F00417DAE /* rader-01@2x.png */; };
@@ -34,7 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B214437116C9F3FA00ADF008 /* TexaGPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TexaGPS.framework; path = "TexaGPSLib/Debug-Framework/TexaGPS.framework"; sourceTree = "<group>"; };
+		B213F7481806433800902F00 /* TexaGPS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TexaGPS.framework; path = "TexaGPSLib/Debug-Framework/TexaGPS.framework"; sourceTree = "<group>"; };
+		B23415B517A67D5C006A7037 /* Preset2x2.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = Preset2x2.zip; sourceTree = "<group>"; };
 		B23F66EE1641203F00417DAE /* Landmark2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Landmark2.png; sourceTree = "<group>"; };
 		B23F66EF1641203F00417DAE /* Landmark2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Landmark2@2x.png"; sourceTree = "<group>"; };
 		B23F66F01641203F00417DAE /* rader-01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rader-01@2x.png"; sourceTree = "<group>"; };
@@ -73,8 +75,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B214437216C9F3FA00ADF008 /* TexaGPS.framework in Frameworks */,
 				B27A08A516493115002C5735 /* CFNetwork.framework in Frameworks */,
+				B213F7491806433800902F00 /* TexaGPS.framework in Frameworks */,
 				B27A089C1649245F002C5735 /* SystemConfiguration.framework in Frameworks */,
 				B2E6C9E61640D3CB00373139 /* MapKit.framework in Frameworks */,
 				B2E6C9E41640D3C100373139 /* CoreLocation.framework in Frameworks */,
@@ -107,7 +109,7 @@
 		B2E6C9BD1640D15800373139 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B214437116C9F3FA00ADF008 /* TexaGPS.framework */,
+				B213F7481806433800902F00 /* TexaGPS.framework */,
 				B27A08A416493115002C5735 /* CFNetwork.framework */,
 				B27A089B1649245F002C5735 /* SystemConfiguration.framework */,
 				B2E6C9E51640D3CB00373139 /* MapKit.framework */,
@@ -135,6 +137,7 @@
 		B2E6C9C51640D15800373139 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B23415B517A67D5C006A7037 /* Preset2x2.zip */,
 				B2AD524816AFE24B00073686 /* Preset2x3.zip */,
 				B2AD524916AFE24B00073686 /* Preset3x3.zip */,
 				B25C891816421FE4005EE1E4 /* compass@2x.png */,
@@ -219,6 +222,7 @@
 				B2E0C77B169A70A600CF0E4F /* Localizable.strings in Resources */,
 				B2AD524A16AFE24B00073686 /* Preset2x3.zip in Resources */,
 				B2AD524B16AFE24B00073686 /* Preset3x3.zip in Resources */,
+				B23415B617A67D5C006A7037 /* Preset2x2.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +294,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -310,7 +314,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -323,10 +327,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/TexaGPSTEST\"",
-					"\"$(SRCROOT)/TexaGPSLib/Release-framework\"",
-					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/TexaGPSLib/Debug-Framework\"",
+					"\\\"$(SRCROOT)/TexaGPSTEST\\\"",
+					"\\\"$(SRCROOT)/TexaGPSLib/Release-framework\\\"",
+					"$(SRCROOT)",
+					"\\\"$(SRCROOT)/TexaGPSLib/Debug-Framework\\\"",
+					"/Users/tama-abe/Documents/git/ISSHO_TexaGPS_Sample/TexaGPSLib/Debug-Framework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TexaGPSTEST/TexaGPSTEST-Prefix.pch";
@@ -345,10 +350,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/TexaGPSTEST\"",
-					"\"$(SRCROOT)/TexaGPSLib/Release-framework\"",
-					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/TexaGPSLib/Debug-Framework\"",
+					"\\\"$(SRCROOT)/TexaGPSTEST\\\"",
+					"\\\"$(SRCROOT)/TexaGPSLib/Release-framework\\\"",
+					"$(SRCROOT)",
+					"\\\"$(SRCROOT)/TexaGPSLib/Debug-Framework\\\"",
+					"/Users/tama-abe/Documents/git/ISSHO_TexaGPS_Sample/TexaGPSLib/Debug-Framework",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TexaGPSTEST/TexaGPSTEST-Prefix.pch";

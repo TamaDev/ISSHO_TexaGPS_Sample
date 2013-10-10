@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<dict>
+		<key>Image</key>
+		<string>Title@2x.png</string>
+		<key>LocalizeCaption</key>
+		<dict>
+			<key>en</key>
+			<string>Route+R HD</string>
+			<key>ja</key>
+			<string>なびすけR HD</string>
+		</dict>
+	</dict>
+	<key>DomainNameSpace</key>
+	<string>ISSHO</string>
+	<key>AppNameSpace</key>
+	<string>RouteRHD</string>
+	<key>ButtonType</key>
+	<string>kButtonLayout2x2</string>
+	<key>ButtonInformation</key>
+	<dict>
+		<key>ButtonA1</key>
+		<dict>
+			<key>LocalizeCaption</key>
+			<dict>
+				<key>en</key>
+				<string>Reroute</string>
+				<key>ja</key>
+				<string>リルート</string>
+			</dict>
+			<key>Image</key>
+			<string>btnZoomRL@2x.png</string>
+			<key>Command</key>
+			<string>ISSHO.RouteHD.Reroute</string>
+		</dict>
+		<key>ButtonA2</key>
+		<dict>
+			<key>LocalizeCaption</key>
+			<dict>
+				<key>en</key>
+				<string>Zoom In</string>
+				<key>ja</key>
+				<string>拡大</string>
+			</dict>
+			<key>Image</key>
+			<string>btnZoomIn@2x.png</string>
+			<key>Command</key>
+			<string>ISSHO.RouteHD.ZoomIn</string>
+		</dict>
+		<key>ButtonB1</key>
+		<dict>
+			<key>LocalizeCaption</key>
+			<dict>
+				<key>en</key>
+				<string>Current</string>
+				<key>ja</key>
+				<string>現在地</string>
+			</dict>
+			<key>Image</key>
+			<string>btnZoomCP@2x.png</string>
+			<key>Command</key>
+			<string>ISSHO.RouteHD.CurrentLocation</string>
+		</dict>
+		<key>ButtonB2</key>
+		<dict>
+			<key>LocalizeCaption</key>
+			<dict>
+				<key>en</key>
+				<string>Zoom Out</string>
+				<key>ja</key>
+				<string>縮小</string>
+			</dict>
+			<key>Image</key>
+			<string>btnZoomOut@2x.png</string>
+			<key>Command</key>
+			<string>ISSHO.RouteHD.ZoomOut</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

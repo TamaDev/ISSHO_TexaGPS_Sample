@@ -17,21 +17,4 @@
     #define LOG_METHOD ;
 #endif
 
-// texaGPS用の疑似メンバー
-static CLLocation* airGPSLocation_;
-
-@implementation MKUserLocation (MKUserLocationAirGPS)
-
-- (void)setAirGPSLocation:(CLLocation *)newLocation
-{
-    airGPSLocation_ = newLocation;
-}
-
-- (CLLocation*)airGPSLocation
-{
-    return(airGPSLocation_);
-}
-
-@end
-
 #endif

@@ -53,7 +53,7 @@
 #pragma mark === CLLocationManager Delegate ===
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    CLLocation* newLocation = [locations lastObject];
+    CLLocation* newLocation = [locations objectAtIndex:0];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         
@@ -64,14 +64,13 @@
 
         if( CLLocationCoordinate2DIsValid(newLocation.coordinate) == YES ){
             // Added user location annotation.
-            if( proxyUserLocation != nil ){
-                [mapTestView_ removeAnnotation:proxyUserLocation];
-                proxyUserLocation = nil;
+            if( proxyUserLocation == nil ){
+                proxyUserLocation = [[MKUserLocation alloc] init];
+                [mapTestView_ addAnnotation:proxyUserLocation];
             }
-            proxyUserLocation = [[MKUserLocation alloc] init];
             proxyUserLocation.coordinate = newLocation.coordinate;
+            TexaLOG(@"CLLocation: coord[%f, %f]",proxyUserLocation.coordinate.latitude, proxyUserLocation.coordinate.longitude);
             texaGPS.airGPSLocation = newLocation;
-            [mapTestView_ addAnnotation:proxyUserLocation];
             
             [UIView animateWithDuration:1.0f animations:^{
                 proxyUserLocation.coordinate = newLocation.coordinate;
@@ -311,7 +310,8 @@
 - (IBAction)pushUpload2x3:(id)sender
 {
     NSBundle* mainBundle = [NSBundle mainBundle];
-    NSString* uploadZipPath = [mainBundle pathForResource:@"Preset2x3" ofType:@"zip"];
+//    NSString* uploadZipPath = [mainBundle pathForResource:@"Preset2x3" ofType:@"zip"];
+    NSString* uploadZipPath = [mainBundle pathForResource:@"Preset2x2" ofType:@"zip"];
     TexaLOG(@"%@",uploadZipPath);
     
     [texaGPS uploadPreset:uploadZipPath];
@@ -329,6 +329,7 @@
 - (IBAction)pushCurrentLocation:(id)sender
 {
     if( texaGPS.enableAirGPS == YES ){
+        NSLog(@"LAT:%.6f LON:%.6f",texaGPS.airGPSLocation.coordinate.latitude, texaGPS.airGPSLocation.coordinate.longitude);
         [mapTestView_ setCenterCoordinate:texaGPS.airGPSLocation.coordinate animated:YES];
     }else{
         [mapTestView_ setCenterCoordinate:locationManager.location.coordinate animated:YES];
