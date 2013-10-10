@@ -8,6 +8,7 @@ https://itunes.apple.com/jp/app/texagps/id581198980?mt=8
   
 This repository is TexaGPS sample code and library.  
 ARMV7, ARMV7s, i386 support. Required iOS5.1 and iOS6 later.  
+Please refer to Preset2x3.zip, preset3x3.zip for the sample of the user definition panel.
   
 **** CAUTION! ****  
 This sample project contained TexaGPS.framework by the hard-linked for restrictions of github.   
@@ -32,7 +33,8 @@ https://itunes.apple.com/jp/app/texagps/id581198980?mt=8
 	
 このリポジトリはTexaGPSのサンプルコードとライブラリーです。  
 ARMV7, ARMV7s, i386をサポートします。iOS5.1とiOS6以降が必要です。  
-  
+ユーザー定義パネルのサンプルはPreset2x3.zip、preset3x3.zipを参照してください。
+
 **** 注意事項！ ****  
 このプロジェクト内のTexaGPS.frameworkはgithubの制約のためにハードリンクで含まれています。  
 TexaGPSのフレームワークをあなたのプロジェクトに追加する場合、以下の手順で進めてください。  
